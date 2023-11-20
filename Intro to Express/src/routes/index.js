@@ -1,17 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const { createNumber,
-        getNumbers,
+const { createNumber, 
+        getNumbers, 
+        updateNumber, 
         deleteNumber,
-        updateNumber } = require('../controllers/index.js');
+        registerUser 
+    } = require('../controllers/index.js')
 
 router.post('/create', createNumber);
 
 router.get('/get', getNumbers);
 
+router.put('/update', updateNumber);
+
 router.delete('/delete', deleteNumber);
 
-router.put('/update', updateNumber);
+router.post('/register', registerUser);
 
 module.exports = router;
